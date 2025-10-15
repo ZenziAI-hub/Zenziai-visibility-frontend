@@ -14,12 +14,16 @@ function App() {
     setAnalysisData(null)
 
     try {
+<<<<<<< HEAD
       const response = await fetch('/api/analyze-url', {
+=======
+        const response = await fetch('/api/analyze-url', {
+>>>>>>> ac43ceee38439586d8c58bff1801ab109adc6e51
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ company_name: companyName }),
+        body: JSON.stringify({ url: companyName }),
       })
 
       if (!response.ok) {
