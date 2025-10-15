@@ -19,7 +19,7 @@ function App() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ company_name: companyName }),
+        body: JSON.stringify({ url: companyName }),
       })
 
       if (!response.ok) {
