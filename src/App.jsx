@@ -14,7 +14,7 @@ function App() {
     setAnalysisData(null)
 
     try {
-      const response = await fetch('/api/analyze', {
+        const response = await fetch('/api/analyze-url', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
