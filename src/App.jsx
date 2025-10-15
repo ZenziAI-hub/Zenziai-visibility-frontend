@@ -27,7 +27,7 @@ function App() {
       }
 
       const result = await response.json()
-      setAnalysisData(result.data)
+      setAnalysisData(result)
     } catch (err) {
       setError(err.message)
     } finally {
