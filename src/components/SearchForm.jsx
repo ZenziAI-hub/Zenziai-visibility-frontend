@@ -29,7 +29,7 @@ export function SearchForm({ onSearch, isLoading }) {
           <div className="flex space-x-2">
             <Input
               type="text"
-              placeholder="Enter company name (e.g., Apple, Microsoft, Tesla)"
+              placeholder="Enter URL to analyze (e.g., https://www.apple.com )"
               value={companyName}
               onChange={(e) => setCompanyName(e.target.value)}
               className="flex-1"
