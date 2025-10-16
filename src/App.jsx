@@ -50,7 +50,7 @@ function App() {
           </div>
         )}
 
-        {analysisData && <AnalysisResults data={analysisData} />}
+        {analysisData && <UrlAnalysisResults data={analysisData} />}
       </div>
     </div>
   )
