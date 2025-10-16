@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { SearchForm } from './components/SearchForm'
-import { AnalysisResults } from './components/AnalysisResults'
+import { UrlAnalysisResults } from './components/UrlAnalysisResults'
 import './App.css'
 
 function App() {
