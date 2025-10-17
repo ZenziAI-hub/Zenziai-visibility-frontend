@@ -5,15 +5,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Search, Loader2 } from 'lucide-react'
 
 export function SearchForm({ onSearch, isLoading }) {
-  const [companyName, setCompanyName] = useState('')
+  const [inputValue, setInputValue] = useState('')
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (companyName.trim()) {
-      onSearch(companyName.trim())
-    }
+const handleSubmit = (e) => {
+  e.preventDefault()
+  let url = inputValue.trim()
+  
+  // Add https:// if no protocol is specified
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+    url = 'https://' + url
   }
-
+  
+  onSearch(url)
+  setInputValue('')
+}
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader className="text-center">
