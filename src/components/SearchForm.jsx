@@ -7,18 +7,19 @@ import { Search, Loader2 } from 'lucide-react'
 export function SearchForm({ onSearch, isLoading }) {
   const [inputValue, setInputValue] = useState('')
 
-const handleSubmit = (e) => {
-  e.preventDefault()
-  let url = inputValue.trim()
-  
-  // Add https:// if no protocol is specified
-  if (!url.startsWith('http://') && !url.startsWith('https://')) {
-    url = 'https://' + url
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    let url = inputValue.trim()
+    
+    // Add https:// if no protocol is specified
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+      url = 'https://' + url
+    }
+    
+    onSearch(url)
+    setInputValue('')
   }
-  
-  onSearch(url)
-  setInputValue('')
-}
+
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader className="text-center">
@@ -34,13 +35,13 @@ const handleSubmit = (e) => {
           <div className="flex space-x-2">
             <Input
               type="text"
-              placeholder="Enter URL to analyze (e.g., https://www.apple.com )"
-              value={companyName}
-              onChange={(e) => setCompanyName(e.target.value)}
+              placeholder="Enter URL to analyze (e.g., www.apple.com)"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
               className="flex-1"
               disabled={isLoading}
             />
-            <Button type="submit" disabled={isLoading || !companyName.trim()}>
+            <Button type="submit" disabled={isLoading || !inputValue.trim()}>
               {isLoading ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
               ) : (
@@ -54,4 +55,3 @@ const handleSubmit = (e) => {
     </Card>
   )
 }
-
